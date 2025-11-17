@@ -1,0 +1,54 @@
+ion-content {
+    --padding-bottom: 90px;
+}
+
+.profile-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 10px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.edit-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.name {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.info {
+  color: #666;
+  font-size: 14px;
+}
+
+.section {
+  padding: 20px;
+}
+
+.section h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.update-btn {
+  margin-top: 20px;
+}

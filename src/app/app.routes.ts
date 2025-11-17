@@ -24,5 +24,12 @@ export const routes: Routes = [
       import('./events/eventsdetails/eventsdetails.component').then(
         (m) => m.EventsdetailsComponent
       ),
+  },
+  {
+    path: 'profil',
+    loadComponent: () =>
+      import('./profil/profil-page/profil-page.component').then(
+        (m) => m.ProfilPageComponent
+      ),
   }
 ];

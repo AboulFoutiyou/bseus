@@ -1,0 +1,57 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+
+    <ion-title>Profil</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button disabled></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="profile-container">
+
+    <div class="avatar-wrapper">
+      <div class="avatar" [style.backgroundImage]="'url(' + user.avatarUrl + ')'"></div>
+
+      <ion-button class="edit-btn" size="small" shape="round" fill="solid" color="danger">
+        <ion-icon name="pencil-outline"></ion-icon>
+      </ion-button>
+    </div>
+
+    <h2 class="name">{{ user.fullName }}</h2>
+
+    <p class="info">Groupe sanguin: {{ user.bloodType }}</p>
+    <p class="info">Dernier don de sang: {{ user.lastDonation }}</p>
+  </div>
+
+  <div class="section">
+    <h3>Informations personnelle</h3>
+
+    <ion-list lines="none">
+
+      <ion-item>
+        <ion-label position="stacked">Adresse</ion-label>
+        <ion-input [(ngModel)]="user.address"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Region</ion-label>
+        <ion-input [(ngModel)]="user.region"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Numero de telephone</ion-label>
+        <ion-input type="tel" [(ngModel)]="user.phone"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button expand="block" color="danger" class="update-btn">
+      Modifier le profil
+    </ion-button>
+  </div>
+
+</ion-content>
