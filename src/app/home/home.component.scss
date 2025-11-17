@@ -1,0 +1,90 @@
+// Importation de la police Inter
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+
+// Définition des couleurs personnalisées
+:root {
+  --ion-color-primary: #ea2a33;
+  --ion-color-primary-rgb: 234, 42, 51;
+  --ion-color-background-light: #f8f6f6;
+  --ion-color-background-dark: #211111;
+}
+
+ion-content {
+  --background: var(--ion-color-background-light);
+}
+
+.design-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: var(--ion-color-background-light);
+
+  .hero-section {
+    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBi51UqBVFd-raJ-Lqh6bsWyRDZrUJwZF3zD-sTdGqydALmPE9E5CnIPGDkaTZfPOXYtsVMz-a-K5eQOK_D46v68tJ7hDPVgo8sIEro2uSAGRxOC59t6EJ5n1lro4Hbh2WA1FVI7gZuyCUrk3y_I2YimYMLkPCMwiSLbzvOkvVxLwQTvCT98EUClDJRJmfFioxPQ1ine5JNmbwBPLkjo355WAUCTiGZLWKZgRQHwJFAhgjFwCxwK__fkqcG7Rxf2mt-l0p6gdrrG6Y');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 40vh;
+    width: 100%;
+  }
+
+  .content-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    text-align: center;
+
+    h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5rem; /* 3xl */
+      font-weight: 700;
+      color: var(--ion-color-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: var(--ion-color-medium);
+      max-width: 20rem;
+      margin: 0 auto;
+    }
+  }
+
+  .button-section {
+    padding: 1.5rem;
+    padding-bottom: calc(1.5rem + 60px);
+
+    ion-button {
+      margin-bottom: 1rem;
+      height: 3rem;
+      --border-radius: 0.5rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      text-transform: none;
+    }
+  }
+}
+
+// Mode sombre
+// .ios.body-dark,
+// .md.body-dark {
+//   .design-root {
+//     background-color: var(--ion-color-background-dark);
+
+//     .content-section {
+//       h2 {
+//         color: var(--ion-color-light);
+//       }
+
+//       p {
+//         color: var(--ion-color-medium);
+//       }
+//     }
+//   }
+// }

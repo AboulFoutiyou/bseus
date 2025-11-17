@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar class="header-toolbar">
+
+    <ion-title>Campagnes</ion-title>
+
+    <div slot="end" class="empty-slot"></div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="page-content">
+
+  <div class="campaign-card" *ngFor="let c of campaigns" (click)="goToDetails(c.id)">
+
+    <img [src]="c.image" class="campaign-img" />
+
+    <div class="campaign-info">
+      <h3>{{ c.title }}</h3>
+      <p>{{ c.date }}</p>
+      <p>{{ c.location }}</p>
+    </div>
+
+    <ion-button fill="clear" class="icon-btn">
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-button>
+
+  </div>
+
+</ion-content>

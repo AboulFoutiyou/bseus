@@ -1,0 +1,94 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- Bouton de retour : Utilisez le defaultHref si vous n'avez pas de chemin parent clair -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/events"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Détails de l'événement</ion-title>
+    <ion-buttons slot="end">
+      <!-- Optionnel: bouton de partage, etc. -->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Affichage conditionnel des détails (au cas où EventDetails ne serait pas chargé) -->
+<ion-content fullscreen>
+  <div *ngIf="EventDetails.id !== 0" class="detail-root">
+    <!-- Section Image/Hero -->
+    <div 
+      class="hero-image" 
+      [style.background-image]="'url(' + EventDetails.image + ')'">
+    </div>
+
+    <main class="content-main">
+      <!-- Titre et Description -->
+      <div class="content-section ion-padding-horizontal">
+        <h2>{{ EventDetails.title }}</h2>
+        <p>{{ EventDetails.description }}</p>
+      </div>
+
+      <!-- Détails (Date, Heure, Lieu, Organisateur) -->
+      <div class="info-details ion-padding-horizontal">
+        
+        <!-- Date -->
+        <div class="info-item">
+          <ion-icon name="calendar-outline" color="danger"></ion-icon>
+          <div>
+            <p class="label">Date</p>
+            <p class="value">{{ EventDetails.date }}</p>
+          </div>
+        </div>
+
+        <!-- Heure (Combiner startTime et endTime) -->
+        <div class="info-item">
+          <ion-icon name="time-outline" color="danger"></ion-icon>
+          <div>
+            <p class="label">Heure</p>
+            <p class="value">{{ EventDetails.startTime }} - {{ EventDetails.endTime }}</p>
+          </div>
+        </div>
+
+        <!-- Lieu -->
+        <div class="info-item">
+          <ion-icon name="location-outline" color="danger"></ion-icon>
+          <div>
+            <p class="label">Lieu</p>
+            <p class="value">{{ EventDetails.location }}</p>
+          </div>
+        </div>
+
+        <!-- Organisateur -->
+        <div class="info-item">
+          <ion-icon name="business-outline" color="danger"></ion-icon>
+          <div>
+            <p class="label">Organisateur</p>
+            <p class="value">{{ EventDetails.organizer }}</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Critères d'éligibilité -->
+      <div class="eligibility-section ion-padding-horizontal">
+        <h3>Critères d'éligibilité</h3>
+        <ul class="eligibility-list">
+          <li *ngFor="let criterion of EventDetails.eligibility">
+            <ion-icon name="checkmark-circle" color="danger"></ion-icon>
+            <p>{{ criterion }}</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Bouton d'Action -->
+      <div class="action-button-section ion-padding">
+        <ion-button expand="block" shape="round" color="danger">
+          S'inscrire à l'événement
+        </ion-button>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Optionnel: Affichage d'un spinner si EventDetails.id est toujours 0 (en cours de chargement) -->
+  <div *ngIf="EventDetails.id === 0" class="loading-spinner">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
+</ion-content>

@@ -1,0 +1,68 @@
+/* Colors */
+:root {
+  --primary: #ea2a33;
+  --background-light: #f8f6f6;
+  --background-dark: #211111;
+}
+
+.header-toolbar {
+  background: var(--background-light);
+  border-bottom: 1px solid #ddd;
+
+  ion-title {
+    font-weight: 700;
+    font-size: 20px;
+  }
+}
+
+.empty-slot {
+  width: 40px;
+}
+
+.page-content {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 16px;
+  --padding-bottom: 60px;
+  background: var(--background-light);
+}
+
+.campaign-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--background-light);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  margin-bottom: 16px;
+}
+
+.campaign-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.campaign-info {
+  flex: 1;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    color: #111;
+  }
+
+  p {
+    font-size: 13px;
+    color: #666;
+    margin: 2px 0;
+  }
+}
+
+.icon-btn {
+  color: var(--primary);
+  font-size: 24px;
+}
